@@ -5,25 +5,17 @@ var john = {
   lastName: 'Smith',
   yearOfBirth: 1990,
   job: 'teacher',
-  isMarried: false
+  isMarried: false,
+  family: ['Jane', 'Mark', 'Bob'],
+  calculateAge: function() {
+    return 2018 - this.yearOfBirth;
+  },
+  get age() {
+    return this.calculateAge();
+  }
 };
 
-console.log(john.lastName);
-console.log(john.lastName);
+console.log(john.age);
+console.log(john.family[2]);
 
-var xyz = 'job';
-console.log(john[xyz]);
-
-john.lastName = 'Miller';
-john.job = 'programmer';
-
-console.log(john);
-
-var jane = new Object();
-jane.name = 'Jane';
-jane.lastName = 'Smith';
-jane.yearOfBirth = 1969;
-jane.job = 'retired';
-jane.isMarried = true;
-
-console.log(jane);
+var age = john.calculateAge();
