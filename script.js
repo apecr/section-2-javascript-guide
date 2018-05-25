@@ -89,6 +89,7 @@ if (23 === '23') {
 
 // Lecture: boolean logic and switch
 
+/*
 var age = 25;
 
 if (age < 20) {
@@ -112,3 +113,54 @@ switch (job) {
   default:
     console.log('John does something else.');
 }
+*/
+
+// CODING CHALLENGE 1
+
+// The player with the highest value of this height (in cm)
+// plus five times his age wins
+
+// 1. Create
+// 2. Assign scores
+// 3. Decide who wins and print the winner. Include the score
+// Dont forget that can be a draw
+// 4. Add a third player and now decide who wins
+
+var john = {
+  name: 'John',
+  height: 180,
+  age: 10
+};
+
+var johnFriend = {
+  name: 'JohnFriend',
+  height: 180,
+  age: 20
+};
+
+var anotherFriend = {
+  name: 'JohnAnotherFriend',
+  height: 180,
+  age: 20
+};
+
+
+const arrayPersons = [john, johnFriend, anotherFriend];
+var calculateScore = person => person.height + 5 * person.age;
+
+const reducePersons = (personwhoWins, newPerson) => {
+  if (calculateScore(personwhoWins) > calculateScore(newPerson)) {
+    personwhoWins.draw = false;
+    return personwhoWins;
+  }
+  if (calculateScore(personwhoWins) === calculateScore(newPerson)) {
+    personwhoWins.draw = true;
+    return personwhoWins;
+  }
+  return newPerson;
+};
+
+const result = arrayPersons.reduce(reducePersons, {});
+
+console.log(result.draw ? 'It\'s a draw' : `${result.name} has won with ${calculateScore(result)}`);
+
