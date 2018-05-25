@@ -125,7 +125,7 @@ switch (job) {
 // 3. Decide who wins and print the winner. Include the score
 // Dont forget that can be a draw
 // 4. Add a third player and now decide who wins
-
+/*
 var john = {
   name: 'John',
   height: 180,
@@ -163,4 +163,42 @@ const reducePersons = (personwhoWins, newPerson) => {
 const result = arrayPersons.reduce(reducePersons, {});
 
 console.log(result.draw ? 'It\'s a draw' : `${result.name} has won with ${calculateScore(result)}`);
+*/
 
+// Lecture functions
+
+function calculateAge(yearOfBirth) {
+  var age = 2018 - yearOfBirth;
+  return age;
+}
+var john = {
+  get age() {
+    return calculateAge(this.yearOfBirth);
+  },
+  name: 'john',
+  yearOfBirth: 1990
+};
+var mike = {
+  get age() {
+    return calculateAge(this.yearOfBirth);
+  },
+  name: 'mike',
+  yearOfBirth: 1948
+};
+var mary = {
+  name: 'mary',
+  yearOfBirth: 1969,
+  get age() {
+    return calculateAge(this.yearOfBirth);
+  },
+};
+
+function yearsUntilRetirement(person) {
+  const output = 65 - person.age >= 0 ? 65 - person.age : 0;
+  console.log(`${person.name} has ${output} years until retirement`);
+  return output;
+}
+
+yearsUntilRetirement(mary);
+yearsUntilRetirement(mike);
+yearsUntilRetirement(john);
