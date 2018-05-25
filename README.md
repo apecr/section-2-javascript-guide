@@ -1,6 +1,6 @@
 # Section 2
 
-## Incications
+## Indications
 
 Open `index.html` in your browser and see what happens.
 
