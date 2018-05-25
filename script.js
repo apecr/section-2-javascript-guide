@@ -1,19 +1,22 @@
-// Lecture: Statements and expressions
+// Lecture: Arrays
 
+var names = ['John', 'Jane', 'Mark'];
+var years = new Array(1990, 1969, 1948);
 
-function someFun(par) {
-  //code
-}
+console.log(names[1]);
+names[1] = 'Ben';
+console.log(names);
 
-var someFin = function(par) {
-  //code
-};
+var john = ['John', 'Smith', 1990, 'driver', false];
 
-// Expresions
-3 + 4;
-var x = 3;
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
 
-// statements
-if (x === 5) {
-  // do something
+console.log(john);
+console.log(john.indexOf('Smith'));
+
+if (john.indexOf('teacher') === -1) {
+  console.log('John is NOT a teacher.');
 }
