@@ -1,27 +1,38 @@
-// Coding challenge 2
+// Coding challenge 2: Solution
 
+var years = [2001, 1985, 1994, 2014, 1973];
+var ages = [];
 
-const years = [1990, 1987, 1986, 1996, 2001, 1956, 1960];
-const yearsFilled = years.map(element => element);
+for (var i = 0; i < years.length; i++) {
+  ages[i] = 2016 - years[i];
+}
 
-console.log(yearsFilled);
-
-yearsFilled.forEach(yearOfBirht => {
-  if (2018 - yearOfBirht >= 18) {
-    return console.log('Full Age', yearOfBirht);
+for (i = 0; i < ages.length; i++) {
+  if (ages[i] >= 18) {
+    console.log('Full age', ages[i]);
+  } else {
+    console.log('Not full age', ages[i]);
   }
-  console.log('Not full age', yearOfBirht);
-});
+}
 
-const printFullAge = yearsOfBirht => {
-  const yearsOfBirthFilled = yearsOfBirht.map(element => element);
-  yearsOfBirthFilled.forEach(yearOfBirht => {
-    if (2018 - yearOfBirht >= 18) {
-      return console.log('Full Age', yearOfBirht);
+function printFullAge(yearsF) {
+  var agesF = [];
+  var fullAges = [];
+
+  for (var i = 0; i < yearsF.length; i++) {
+    agesF[i] = 2016 - yearsF[i];
+  }
+
+  for (i = 0; i < agesF.length; i++) {
+    if (agesF[i] >= 18) {
+      console.log('Full age', agesF[i]);
+      fullAges.push(true);
+    } else {
+      console.log('Not full age', agesF[i]);
+      fullAges.push(false);
     }
-    console.log('Not full age', yearOfBirht);
-  });
-  return yearsOfBirthFilled.map(element => 2018 - element >= 18);
-};
+  }
+  return fullAges;
+}
 
-console.log(printFullAge([1965, 2008, 1992]));
+console.log(printFullAge([1990, 2001, 2003]));
