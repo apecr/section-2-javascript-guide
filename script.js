@@ -1,21 +1,38 @@
-// Lecture: Objects
+// Lecture: Loops
 
-var john = {
-  name: 'John',
-  lastName: 'Smith',
-  yearOfBirth: 1990,
-  job: 'teacher',
-  isMarried: false,
-  family: ['Jane', 'Mark', 'Bob'],
-  calculateAge: function() {
-    return 2018 - this.yearOfBirth;
-  },
-  get age() {
-    return this.calculateAge();
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+var names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+
+for (var i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+
+names.reverse().forEach(element => console.log(element));
+
+console.log(names.reverse());
+
+// while loops
+var i = 0;
+while (i < names.length) {
+  console.log(names[i]);
+  i++;
+}
+
+// break and continue sentence
+
+for (var i = 1; i <= 5; i++) {
+  console.log(i);
+  if (i === 3) {
+    break;
   }
-};
+}
 
-console.log(john.age);
-console.log(john.family[2]);
-
-var age = john.calculateAge();
+for (var i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+  console.log(i);
+}
